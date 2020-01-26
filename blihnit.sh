@@ -7,9 +7,19 @@
 
 #!/bin/sh
 
-BLIH_USER="@epitech.eu"
-BLIH_PWD=""
-BLIH_TOKEN="`echo -n "$BLIH_PWD" | sha512sum | cut -f1 -d' '`"
+CONFIG_PATH=$HOME/.config/blihnit.conf
+
+if [ ! -f $CONFIG_PATH ]; then
+    echo "Epitech email:"
+    read BLIH_USER
+    echo "Password:"
+    read -s BLIH_PWD
+    BLIH_TOKEN="`echo -n "$BLIH_PWD" | sha512sum | cut -f1 -d' '`"
+else
+    BLIH_USER=$(awk -F"=" '/^BLIH_USER/ { print $2 }' $CONFIG_PATH)
+    BLIH_PWD=""
+    BLIH_TOKEN=$(awk -F"=" '/^BLIH_TOKEN/ { print $2 }' $CONFIG_PATH)
+fi
 
 if [ $# -ge 1 ]; then
     REPO_NAME=$1
