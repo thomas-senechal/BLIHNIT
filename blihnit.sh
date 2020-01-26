@@ -1,3 +1,10 @@
+##
+## Thomas SENECHAL PROJECT, 2020
+## BLIHNIT
+## File description:
+## blihnit.sh is a small script created to init BLIH repository easily.
+##
+
 #!/bin/sh
 
 BLIH_USER="@epitech.eu"
