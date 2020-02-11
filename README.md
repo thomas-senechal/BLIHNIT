@@ -30,8 +30,24 @@ blihnit $REPOSITORY_NAME
 
 Create a repository and give read and write ACL to every given account:
 ```
-blihnit $REPOSITORY_NAME firstname.lastname firstname2.lastname2
+blihnit $REPOSITORY_NAME firstname.lastname firstname2.lastname2...
 ```
+
+List repository:
+```
+blihnit -l
+```
+
+Delete a repository:
+```
+blihnit -d $REPOSITORY_NAME
+```
+
+Delete multiple repositories:
+```
+blihnit -d $REPOSITORY_NAME1 $REPOSITORY_NAME2 $REPOSITORY_NAME3...
+```
+
 ## Report a bug
 
 If you find a bug, feel free to create a new issue explaining what's the issue.
