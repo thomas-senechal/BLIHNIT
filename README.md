@@ -21,6 +21,12 @@ Basic installation without any save:
 ```
 ./install.sh -n
 ```
+## Update
+Update blihnit:
+```
+blihnit -u
+```
+
 ## Usage
 
 Basic repository creation:
