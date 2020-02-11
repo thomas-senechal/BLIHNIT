@@ -26,6 +26,17 @@ if [ $# -ge 1 ]; then
     if [[ ${ARG:0} == "-l" ]]; then
         blih -u $BLIH_USER -t $BLIH_TOKEN repository list | sort
         exit 0
+    elif [[ ${ARG:0} == "-d" ]]; then
+        REPO_NAME=$2
+        while [ ! -z $2 ]; do
+            read -p "Do you really want to delete $2? (y/n) " -n 1 -r
+            if [[ "$REPLY" =~ ^[Yy]$ ]]; then
+                echo -e '\n'
+                blih -u $BLIH_USER -t $BLIH_TOKEN repository delete $"$2"
+        	    echo "$2 deleted."
+            fi
+            shift
+        done
     else
         REPO_NAME=$1
         echo "Create repository $REPO_NAME"
