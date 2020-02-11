@@ -37,6 +37,17 @@ if [ $# -ge 1 ]; then
             fi
             shift
         done
+    elif [[ ${ARG:0} == "-u" ]]; then
+        cd $HOME
+        if [ -z $HOME/BLIHNIT ]; then
+            if git clone https://github.com/thomas-senechal/BLIHNIT.git; then
+                sudo cp $HOME/BLIHNIT/blihnit.sh /bin/blihnit
+            else
+                echo "Error: could not clone repository."
+            fi
+        elif cd $HOME/BLIHNIT && git pull > $HOME/BLIHNIT/update.log; then
+            sudo cp $HOME/BLIHNIT/blihnit.sh /bin/blihnit
+        fi
     else
         REPO_NAME=$1
         echo "Create repository $REPO_NAME"
