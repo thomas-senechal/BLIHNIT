@@ -4,8 +4,8 @@ Small script to init BLIH repository easily.
 
 ## Description
 
-BLIHNIT is a small script making it easier to create a git repo than with BLIH.
-This script also allows you to add write and read access to other blih users when they are added as parameters.
+BLIHNIT was initially a simple and small script that was easier than BLIH to create a git repo.
+This script now also allows you to add write and read access to other blih users when they are added as parameters, to list, to delete blih repositories.
 
 ## Installation
 The installation process is simple, the installation script will copy `blihnit.sh` to your `/usr/bin/`. If needed, your sudo password will be asked. After this, the script will ask for your blih credentials and will generate a token which will be stored in `~ / .config /`. This config file containing your token will then be used by BLIHNIT to create your git repo.
